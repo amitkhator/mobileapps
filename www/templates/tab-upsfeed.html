@@ -1,0 +1,72 @@
+<ion-view title="UPSFeed">
+
+<html lang="en" ng-app="starter">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<form novalidate name="upsfeedform">
+    <ion-content data-tap-disabled="true" ng-controller="UPSFeedCtrl" class="has-header padding-top" style="background: url(img/backBlurred.jpg) no-repeat center;background-size:cover;">
+          <div class="list">
+		   <label class="item item-input">
+		    <span class="input-label">Customer Name</span>
+    <input type="text" name="name" id="name" ng-model="upsfeed.name" required placeholder="Customer Name">
+  </label>
+  
+  	   <label class="item item-input">
+	    <span class="input-label">Contact No</span>
+    <input type="tel" name="contact" id="contact" ng-model="upsfeed.contact" required placeholder="Contact No">
+	</label>
+	
+	   <label class="item item-input">
+	    <span class="input-label">Email</span>
+    <input type="email" name="email" id="email" ng-model="upsfeed.email" required placeholder="Email">
+	</label>
+   <div ng-controller="IonGoogleAutocompleteController">
+    <label class="item item-input">
+	 <span class="input-label">Address</span>
+    <input type="text" id="Autocomplete" class="form-control" ng-autocomplete ng-model="upsfeed.address" required/>
+  </label>
+	</div>
+	<div>
+	
+	<div class="item item-input-inset">
+    <label class="item-input-wrapper">
+	 <span class="input-label">Serial No</span>
+      <input type="text"  name="serial" id="serial" ng-model="upsfeed.serial" required placeholder="Serial No">
+    </label>
+    <button class="button button-small button-balanced" ng-click="startSerialScan()">Scan
+    </button>
+  </div>
+	
+          </div>
+		  
+	<div>
+	<div class="item item-input-inset">
+    <label class="item-input-wrapper">
+	 <span class="input-label">Model No</span>
+      <input type="text" name="model" id="model" ng-model="upsfeed.model" required placeholder="Model No">
+    </label>
+    <button class="button button-small button-balanced" ng-click="startModelScan()">Scan
+    </button>
+  </div>
+    </div>
+<div>
+<div class="row">
+   <div class="col text-center">
+	  <button type="submit" class="button button-medium button-balanced" ng-click="reset()">Reset</button>
+      <button type="submit" class="button button-medium button-balanced" ng-click="showConfirm()" ng-disabled="upsfeedform.$invalid">Submit</button>
+   </div>
+</div>	
+</div>
+	</div>
+		<div id="signup_home">
+        <div class="schneider_white_logo"></div>  
+    </div>
+	</ion-content>
+	</form>
+	</html>
+</ion-view>
